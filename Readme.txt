@@ -2,7 +2,7 @@ INSTRUCTIONS:
 
 1º: clone the repository to your local machine using the command git clone https://github.com/gabrielmazer/littlelemon.git
 
-2º: open the Pipfile and change the Python version from "3.11" to the version instaled in your machine and salve the file
+2º: open the Pipfile and change the Python version from "3.11" to the version instaled in your machine and save the file
 
 3º: Don't forget to change the DATABASES on settings.py file to your specific data and salve the file
 
