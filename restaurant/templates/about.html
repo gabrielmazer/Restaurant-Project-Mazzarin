@@ -1,0 +1,47 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<section>
+  <article>
+    <h1>About Us</h1>
+    <!--Begin row-->
+    <div class="row">
+      <!--Begin col-->
+      <div class="column">
+        <p>
+          Little Lemon is a website project created by Gabriel Mazer to demonstrate his web development skills.
+          The site simulates a Mediterranean cuisine restaurant, with traditional recipes and a modern twist.
+        </p>
+        <p>
+          The project involved the creation of a reservation and booking API, using Python, Django,
+          Django REST Framework, MySQL, Git and GitHub, JavaScript, HTML5 and CSS3.
+        </p>
+
+        <p>
+          Little Lemon is a fictional example of a restaurant and 
+          on the “Reservations” tab, you can see all the reservations in JSON format that were made from the “Book” tab.
+        </p>
+
+        <p>
+          In the "Book" tab, you can use the booking API that uses django.forms.
+          There, you will not be able to make reservations at the same time and you can see all the reservations for that specific day.
+        </p>
+      </div>
+      <!--End col-->
+
+      <!--Begin col-->
+      <div class="column">
+        <figure class="figure">
+          <img
+            src="{% static 'img/gab-mazer.jpg' %}"
+            alt="Mario and Adrian"
+          />
+          <figcaption class="figure-caption">
+            Little Lemon creator Gabriel Mazer.
+          </figcaption>
+        </figure>
+      </div>
+      <!--End col-->
+    </div>
+    <!--End row-->
+  </article>
+</section>
+{% endblock %}
