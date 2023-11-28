@@ -16,5 +16,5 @@ class Booking(models.Model):
     reservation_slot = models.SmallIntegerField(default=10)
 
     def __str__(self): 
-        return f'{self.first_name} : {str(self.reservation_date)} : {self.no_of_guests} guests'
+        return f'{self.first_name} : {str(self.reservation_date)} : {self.reservation_slot} guests'
     
