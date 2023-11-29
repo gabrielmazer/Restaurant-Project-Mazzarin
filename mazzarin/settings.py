@@ -83,7 +83,7 @@ DATABASES = {
         'NAME': 'mazzarin',
         'HOST':'localhost',
         'PORT': '3306',
-        'USER': 'admindjango',
+        'USER': 'root',
         'PASSWORD': 'employee@123!',
         'OPTIONS': {
             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
