@@ -207,6 +207,7 @@ footer p {
     flex-basis: 50%;
     margin-bottom: 1rem;
     padding-bottom: 1rem;
+    margin-right: 5rem;
   }
 
   .column figure {
