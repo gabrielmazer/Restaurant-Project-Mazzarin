@@ -24,8 +24,8 @@ router.register(r'tables', views.BookingViewSet, basename='tables')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('restaurant/', include('restaurant.urls')),
-    path('restaurant/booking/', include(router.urls)), # link to perform booking operations is http://localhost:8000/restaurant/booking/tables
+    path('', include('restaurant.urls')),
+    path('booking/', include(router.urls)), # link to perform booking operations is http://localhost:8000/restaurant/booking/tables
     path('auth/', include('djoser.urls')),
     path('auth/', include('djoser.urls.authtoken')),
 ]
