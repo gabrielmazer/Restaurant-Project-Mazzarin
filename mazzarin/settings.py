@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -23,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-0k3^*xv=j&*b^(s+b5cnd328#7nw0#3@)okhl%f_2q2e4g^9o5'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["*"]
 
@@ -41,6 +42,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'djoser',
+    'whitenoise.runserver_nostatic',
 ]
 
 MIDDLEWARE = [
@@ -48,10 +50,13 @@ MIDDLEWARE = [
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+CSRF_TRUSTED_ORIGINS = ['https://*.gabrielmazer.software', 'https://gabrielmazer.software']
 
 ROOT_URLCONF = 'mazzarin.urls'
 
@@ -79,16 +84,12 @@ WSGI_APPLICATION = 'mazzarin.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'mazzarin',
-        'HOST':'localhost',
-        'PORT': '3306',
-        'USER': 'root',
-        'PASSWORD': 'employee@123!',
-        'OPTIONS': {
-            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
-        }
-        
+        'HOST':'mazzarin.cncqdp4m6ysv.sa-east-1.rds.amazonaws.com',
+        'PORT': '5432',
+        'USER': 'gabriel',
+        'PASSWORD': 'employee*123!',
     }
 }
 
@@ -127,11 +128,15 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = 'restaurant/static/'
+STATIC_URL = '/static/'
+
+import os
 
 STATICFILES_DIRS = [
-    "restaurant/static",
+    os.path.join(BASE_DIR, 'restaurant/static'),
 ]
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
@@ -148,3 +153,13 @@ REST_FRAMEWORK = {
 DJOSER={
     "USER_ID_FIELD":"username"
 }
+
+AWS_ACCESS_KEY_ID = 'AKIAWZGPMUZJRWGRLFV4'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_STORAGE_BUCKET_NAME = 'mazzarin'
+AWS_S3_SIGNATURE_NAME = 's3v4',
+AWS_S3_REGION_NAME = 'sa-east-1'
+AWS_S3_FILE_OVERWRITE = False
+AWS_DEFAULT_ACL =  None
+AWS_S3_VERITY = True
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'

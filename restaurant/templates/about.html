@@ -1,33 +1,37 @@
 {% extends 'base.html' %} {% load static %} {% block content %}
 <section>
   <article>
-    <h1>About Us</h1>
+    <h1>About me</h1>
     <!--Begin row-->
+    <div class = "row">
+      <div class="column">
+        <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+        <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="large" data-theme="light" data-type="HORIZONTAL" data-vanity="gabrielmazer" data-version="v1"><a class="badge-base__link LI-simple-link" href="https://br.linkedin.com/in/gabrielmazer?trk=profile-badge"></a></div>
+      </div>
+    </div>
     <div class="row">
       <!--Begin col-->
       <div class="column">
         <p>
-          Mazzarin is a website project created by Gabriel Mazer to demonstrate his web development skills.
-          The site simulates a vegan restaurant, with traditional recipes and a modern twist.
+          Hi, I'm Gabriel Mazer, a passionate developer who created Mazzarin, a web application that showcases my skills in back-end and cloud computing. 
+          Mazzarin is a vegan restaurant website that offers traditional recipes with a modern twist.
         </p>
         <p>
-          The project involved the creation of a reservation and booking API, using Python, Django,
-          Django REST Framework, MySQL, Git and GitHub, JavaScript, HTML5 and CSS3.
+          The project was developed in Python and one of my main tasks was to create a booking API using Django REST Framework. The API allows users to make, view, and cancel reservations for the restaurant.
+          Additionally, power users can access the DRF Browsable API and manage the menu, bookings, and users with an access token.
         </p>
 
         <p>
-          You are more than welcome to explore this website.
-          In the “Reservations” tab, you can see all the reservations in JSON format that were made from the “Book” tab.
+          The whole application was deployed on an EC2 instance from AWS, which required me to learn the basics of cloud computing and overcome this challenge.
+        <p>
+          You are invited to explore this website and see what I have built. In the "Reservations" tab,
+          you can see all the reservations in JSON format that were made from the "Book" tab.
         </p>
 
         <p>
-          In the "Book" tab, you can use the booking API that uses django.forms.
-          There, you will not be able to make reservations at the same time and you can see all the reservations for that specific day.
+          In the "Book" tab, you can use the booking API that uses django.forms. There, you will find a user-friendly interface that prevents you from making
+          reservations at the same time as others and lets you see all the reservations for a specific day.
         </p>
-      </div>
-      <div class="column">
-        <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
-        <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="large" data-theme="light" data-type="HORIZONTAL" data-vanity="gabrielmazer" data-version="v1"><a class="badge-base__link LI-simple-link" href="https://br.linkedin.com/in/gabrielmazer?trk=profile-badge"></a></div>
       </div>
       <!--End col-->
     </div>
